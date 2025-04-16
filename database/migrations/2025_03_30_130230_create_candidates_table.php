@@ -13,7 +13,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('candidates', function (Blueprint $table) {
-            Schema::create('candidates', function (Blueprint $table) {
                 $table->id();
                 $table->foreignIdFor(User::class); // One-to-one with users table
                 $table->date('date_of_birth'); // Date of birth
@@ -30,7 +29,7 @@ return new class extends Migration
                 $table->enum('application_status', ['attente', 'accepte', 'refuse'])->default('attente'); 
                 $table->timestamp('visit')->nullable(); // Interview date if needed
                 $table->timestamps();
-            });
+            
             
         });
     }

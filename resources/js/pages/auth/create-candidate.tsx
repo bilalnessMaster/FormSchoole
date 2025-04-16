@@ -58,29 +58,15 @@ export default function Register() {
     const years = Array.from({ length: 100 }, (_, i) => (currentYear - i).toString());
 
     return (
-        <AuthLayout title="Create an account" description="Enter your details below to create your account">
-            <Head title="creer candidature" />
+        <AuthLayout title="Créer candidature" description="Enter vos informations pour s'inscrire">
+            <Head title="créer candidature" />
             <form className="flex flex-col gap-6" onSubmit={submit}>
                 <div className="grid gap-6">
                     {/* Personal Information */}
                     <h2 className="text-lg font-medium">formulaire de candidature</h2>
                 
 
-                    <div className="grid gap-2">
-                        <Label htmlFor="email">Email addresse</Label>
-                        <Input
-                            id="email"
-                            type="email"
-                            required
-                            tabIndex={2}
-                            autoComplete="email"
-                            value={data.email}
-                            onChange={(e) => setData('email', e.target.value)}
-                            disabled={processing}
-                            placeholder="email@example.com"
-                        />
-                        <InputError message={errors.email} />
-                    </div>
+                   
 
                     <div className="grid gap-2">
                         <Label htmlFor="date_of_birth">Date de naissance</Label>

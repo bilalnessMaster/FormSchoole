@@ -4,6 +4,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\etudiantController;
 use App\Http\Middleware\CandidateCheck;
+use App\Http\Middleware\checkCandidateExist;
 use App\Http\Middleware\RoleMiddleware;
 use App\Models\Candidate;
 use Illuminate\Support\Facades\DB;
@@ -32,7 +33,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/planifier-candidate', [CandidateController::class, 'planifier'])->middleware(RoleMiddleware::class)->name('planifier-candidate');
 
 
-    Route::get('etudiant', [etudiantController::class , 'index'])->name('etudiant');
+    Route::get('etudiant', [etudiantController::class , 'index'])->middleware(checkCandidateExist::class)->name('etudiant');
 });
 require __DIR__ . '/settings.php';
 require __DIR__ . '/auth.php';

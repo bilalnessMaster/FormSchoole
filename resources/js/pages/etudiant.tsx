@@ -111,8 +111,8 @@ export default function Etudiant({ user, candidature }: { user: User ,  candidat
                                 <h2 className="text-xl font-semibold">{user.name}</h2>
                                 <p className="text-sm text-gray-600">{user.email}</p>
                                 <div className="mt-2">
-                                    <Badge className={twMerge(getStatusColor(candidature.application_status))}>
-                                        {getStatusText(candidature.application_status)}
+                                    <Badge className={twMerge(getStatusColor(candidature?.application_status))}>
+                                        {getStatusText(candidature?.application_status)}
                                     </Badge>
                                 </div>
                             </div>
@@ -128,13 +128,13 @@ export default function Etudiant({ user, candidature }: { user: User ,  candidat
                             </h3>
                             <div className="space-y-2">
                                 <div className="text-sm">
-                                    <span className="text-gray-600">Filière:</span> {candidature.field_of_study}
+                                    <span className="text-gray-600">Filière:</span> {candidature?.field_of_study}
                                 </div>
                                 <div className="text-sm">
-                                    <span className="text-gray-600">Lycée:</span> {candidature.high_school}
+                                    <span className="text-gray-600">Lycée:</span> {candidature?.high_school}
                                 </div>
                                 <div className="text-sm">
-                                    <span className="text-gray-600">Année de Bac:</span> {candidature.graduation_year}
+                                    <span className="text-gray-600">Année de Bac:</span> {candidature?.graduation_year}
                                 </div>
                             </div>
                         </div>
@@ -148,10 +148,10 @@ export default function Etudiant({ user, candidature }: { user: User ,  candidat
                                 Note du Dernier Examen
                             </h3>
                             <div className="flex-1 flex flex-col justify-center items-center">
-                                <div className="text-3xl font-bold">{candidature.last_score}</div>
+                                <div className="text-3xl font-bold">{candidature?.last_score}</div>
                                 <div className="text-sm text-gray-600">/ 20</div>
                                 <Progress 
-                                    value={(candidature.last_score / 20) * 100} 
+                                    value={(candidature?.last_score / 20) * 100} 
                                     className="w-full h-2 mt-2"
                                 />
                             </div>
@@ -179,15 +179,15 @@ export default function Etudiant({ user, candidature }: { user: User ,  candidat
                                 <div className="grid grid-cols-2 gap-y-4">
                                     <div>
                                         <p className="text-sm text-gray-500">Date de Naissance</p>
-                                        <p>{formatDate(candidature.date_of_birth)} ({calculateAge(studentData.date_of_birth)} ans)</p>
+                                        <p>{formatDate(candidature?.date_of_birth)} ({calculateAge(studentData.date_of_birth)} ans)</p>
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Genre</p>
-                                        <p>{studentData.gender === 'homme' ? 'Homme' : 'Femme'}</p>
+                                        <p>{studentData?.gender === 'homme' ? 'Homme' : 'Femme'}</p>
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Nationalité</p>
-                                        <p className='capitalize'>{candidature.nationality}</p>
+                                        <p className='capitalize'>{candidature?.nationality}</p>
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Email</p>
@@ -195,11 +195,11 @@ export default function Etudiant({ user, candidature }: { user: User ,  candidat
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Téléphone</p>
-                                        <p>{candidature.phone || 'Non renseigné'}</p>
+                                        <p>{candidature?.phone || 'Non renseigné'}</p>
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500">Adresse</p>
-                                        <p>{candidature.address || 'Non renseignée'}</p>
+                                        <p>{candidature?.address || 'Non renseignée'}</p>
                                     </div>
                                 </div>
                             </CardContent>
@@ -216,11 +216,11 @@ export default function Etudiant({ user, candidature }: { user: User ,  candidat
                             <CardContent className="space-y-4">
                                 <div className="rounded-lg bg-gray-50 dark:bg-neutral-900 p-4">
                                     <h4 className="font-medium mb-2">Statut Actuel</h4>
-                                    <Badge className={twMerge(getStatusColor(candidature.application_status),'text-base px-3 py-1')}>
-                                        {getStatusText(candidature.application_status)}
+                                    <Badge className={twMerge(getStatusColor(candidature?.application_status),'text-base px-3 py-1')}>
+                                        {getStatusText(candidature?.application_status)}
                                     </Badge>
                                     
-                                    {candidature.application_status === 'attente' && (
+                                    {candidature?.application_status === 'attente' && (
                                         <div className="mt-4">
                                             <h4 className="font-medium mb-2">Entretien Programmé</h4>
                                             <div className="flex items-center gap-2">
@@ -233,7 +233,7 @@ export default function Etudiant({ user, candidature }: { user: User ,  candidat
                                         </div>
                                     )}
                                     
-                                    {candidature.application_status === 'accepte' && (
+                                    {candidature?.application_status === 'accepte' && (
                                         <div className="mt-4 ">
                                             <h4 className="font-medium mb-2">Félicitations!</h4>
                                             <p className="text-sm text-gray-600">
@@ -242,7 +242,7 @@ export default function Etudiant({ user, candidature }: { user: User ,  candidat
                                         </div>
                                     )}
                                     
-                                    {candidature.application_status === 'refuse' && (
+                                    {candidature?.application_status === 'refuse' && (
                                         <div className="mt-4">
                                             <h4 className="font-medium mb-2">Candidature non retenue</h4>
                                             <p className="text-sm text-gray-600">

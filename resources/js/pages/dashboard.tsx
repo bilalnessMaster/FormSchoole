@@ -231,7 +231,7 @@ export default function Dashboard({ total, attentes, acceptes, users, status }: 
                 </Card>
 
                 {/* Additional metrics/charts section */}
-                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                {/* <div className="mt-4 grid gap-4 md:grid-cols-2">
                     <Card>
                         <CardHeader>
                             <CardTitle className="flex items-center">
@@ -254,7 +254,7 @@ export default function Dashboard({ total, attentes, acceptes, users, status }: 
                             <PlaceholderPattern className="h-full w-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
                         </CardContent>
                     </Card>
-                </div>
+                </div> */}
             </div>
             <Toaster />
         </AppLayout>

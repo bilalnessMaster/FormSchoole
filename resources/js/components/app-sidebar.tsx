@@ -19,6 +19,12 @@ const mainNavItems: NavItem[] = [
         href: '/etudiant',
         icon: LayoutGrid,
         role : 'candidate'
+    },
+    {
+        title: 'etudiant',
+        href: '/etudiant',
+        icon: LayoutGrid,
+        role : 'admin'
     }
 ];
 
